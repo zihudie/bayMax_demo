@@ -13,8 +13,12 @@ function drag(id){
 		}
 		obj.onmouseup = function(){
 
+		disX = ev.pageX;
+		disY = ev.pageY;
 		}
 	};
+
+	
 	
 	
 }
