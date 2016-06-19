@@ -6,4 +6,10 @@ function drag(id){
 	obj.onmousedown = function(){
 
 	};
+	obj.onmouseup = function(){
+
+	}
+	obj.onmousemove =function(){
+		
+	}
 }
