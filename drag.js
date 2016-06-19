@@ -5,20 +5,16 @@ function drag(id){
 	var disX = 0;
 	var disY = 0;
 	obj.onmousedown = function(ev){
-		disX = ev.pageX -obj.offsetLeft;
+		disX = ev.pageX - obj.offsetLeft;
 		disY = ev.pageY - obj.offsetTop;
-		
-		obj.onmousemove =function(){
-
-		}
-		obj.onmouseup = function(){
-
-		disX = ev.pageX;
-		disY = ev.pageY;
-		}
-	};
-
-	
-	
-	
+		document.onmousemove = function(ev){
+			obj.style.left = ev.pageX - disX + 'px';
+			obj.style.top = ev.pageY - disY + 'px';
+		};
+		document.onmouseup = function(){
+			document.onmousemove = null;
+			document.onmouseup = null;
+		};
+	}
+	return false;
 }
