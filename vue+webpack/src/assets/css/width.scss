@@ -1,0 +1,32 @@
+/*
+ * @Author: yaofang.wu 
+ * @Date: 2018-10-26 14:14:15 
+ * @Last Modified by: yaofang.wu
+ * @Last Modified time: 2018-11-01 09:29:48
+ */
+
+ @charset "utf-8";
+ // font-size
+ $init : 0;
+ $font_one : .1rem;
+ $font_init : 1rem;
+ @for $i from 1 through 2{
+    @for $j from 1 through 9{
+      .f#{$i}#{$j}{
+        font-size: ($i*10 + $j) * $font_one 
+      }
+    }
+ }
+ @for $i from 1 through 2{
+   .f#{$i}#{$init}{
+     font-size: $i * $font_init
+   }
+ }
+//  width
+$one:1%;
+@for $i from 1 through 100{
+    .wb#{$i}{
+       width: $i * $one
+    }
+}
+ 

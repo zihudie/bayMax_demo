@@ -59,6 +59,24 @@
         width: 50px;
         height: 50px;
     }
+
+    .mode-percent {
+        height: 70px;
+        vertical-align: middle;
+        border: 1px solid #eaeaea;
+    }
+
+    .mode-percent>div {
+        display: inline-block;
+        height: 30px;
+        background: lightgrey;
+        margin: 0 10px;
+    }
+
+    .flex {
+        flex-direction: row;
+        justify-content: left;
+    }
 </style>
 <div class="content">
     <div class="v1">
@@ -78,6 +96,15 @@
             <div></div>
             <div></div>
             <div></div>
+        </div>
+        <!-- about % -->
+        <div class="mode-percent flex ">
+            <span class="inline-block">
+                <img src="/public/images/payFailer.png" height="40px" alt="">
+            </span>
+
+            <div>middle1</div>
+            <div>middle2</div>
         </div>
     </div>
     <div class="v2 fl">

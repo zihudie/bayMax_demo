@@ -1,0 +1,161 @@
+@charset "utf-8";
+
+body,
+button,
+input,
+select,
+textarea,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Microsoft YaHei", "微软雅黑", SimHei, "Arial", "宋体", "Times New Roman", Times, serif;
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+
+html,
+body {
+  /*overflow: hidden;*/
+  width: 100%;
+  max-width: 750px;
+  margin: 0 auto;
+  height: 100%;
+  text-align: left;
+  font-size: 1.2rem;
+  text-align: left;
+  background: #F9F9F9;
+}
+
+.h100 {
+  height: 100%;
+}
+
+/**
+ * [padding 取消特定标签的间距，列表样式]
+ * @type {Number}
+ */
+
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  -webkit-tap-highlight-color: transparent;
+  -moz-outline: none;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -webkit-appearance: none;
+  /* Safari */
+}
+
+select,
+select:focus,
+input[type='text'],
+input[type='tel'],
+input[type='date'],
+input[type='password'] {
+  border: none;
+}
+
+input:required:invalid,
+input:focus:invalid,
+textarea:required:invalid,
+textarea:focus:invalid {
+  box-shadow: none;
+}
+
+input,
+button,
+select,
+textarea {
+  outline: none;
+  border: none;
+}
+
+button {
+  background: transparent;
+}
+
+input:-webkit-autofill {
+  box-shadow: 0 0 0px 1000px white inset !important;
+}
+
+select {
+  -webkit-appearance: none;
+  appearance: none;
+  background: none;
+}
+
+textarea {
+  resize: none;
+}
+
+b {
+  font-weight: normal;
+}
+
+/**
+ * [clearfix 清浮动]
+ * @type {[type]}
+ */
+
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.clearfix {
+  zoom: 1;
+}
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+.ime {
+  ime-mode: disabled;
+}
+
+.flex {
+  color: #808d83;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.flex-con {
+  width: 100%;
+  overflow: auto;
+  flex: 1;
+  -webkit-box-flex: 1;
+  flex-grow: 1;
+  /* height: calc(100% - 6rem);
+   height: -webkit-calc(100% - 6rem); */
+}
+
+.flex-bottom {
+  height: 5rem;
+  width: 100%;
+  background-color: #e8e7e7;
+}

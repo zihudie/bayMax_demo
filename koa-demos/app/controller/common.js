@@ -15,6 +15,13 @@ class HomeController extends Controller {
       title: 'model1'
     });
   }
+  async mvvm() {
+    const ctx = this.ctx;
+    await ctx.render('mvvm.html', {
+      title: 'mvvm'
+    });
+  }
+
 
 }
 

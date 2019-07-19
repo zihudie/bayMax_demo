@@ -1,0 +1,244 @@
+/*
+ * @Author: yaofang.wu 
+ * @Date: 2018-10-26 15:40:28 
+ * @Last Modified by: yaofang.wu
+ * @Last Modified time: 2018-10-26 15:43:30
+ */
+
+@charset "utf-8";
+
+.updialog {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1006;
+  /* for uc */
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  text-align: center;
+  background: rgba(0, 0, 0, .6);
+}
+
+.updialogout {
+  position: relative;
+  display: block;
+  width: 75%;
+  max-width: 750px;
+  background-color: #fff;
+  border-radius: 1.5rem;
+  padding: 1rem 0;
+  text-align: center;
+}
+
+
+  .noticePopupbtnBox {
+    display: table;
+    width: 100%;
+  }
+
+  .noticePopupTitle {
+    padding: 1.2rem 0 1rem;
+    line-height: 1;
+    color: #000;
+    text-align: center;
+  }
+
+  .noticePopupContent {
+    line-height: 2rem;
+    color: #313131;
+    text-align: center;
+    padding: 0rem 1.8rem;
+  }
+
+.noticePopupbtn {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    height: 4.4rem;
+    color: #fff;
+    
+}
+.noticePopupbtn span {
+  display: block;
+  height: 3.6rem;
+  background:#F5A623 ;
+  border-radius: 4px;
+  line-height: 3.6rem;
+}
+.noticePopupbtn.leftbtn,
+.noticePopupbtn.rightbtn {
+  width: 50%;
+  cursor: pointer;
+  padding: 0 1.5rem;
+}
+
+
+.noticePopupClose {
+  position: absolute;
+  display: none;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-position: -7.8rem 0;
+  line-height: 2rem;
+  text-align: center;
+  right: 1em;
+  top: 1.3rem;
+  z-index: 99;
+}
+
+/*弹框放大动画*/
+
+@keyframes slideInEnlarge {
+  from {
+    transform: scale(0.3);
+    -ms-transform: scale(0.3);
+    /* IE 9 */
+    -moz-transform: scale(0.3);
+    /* Firefox */
+    -webkit-transform: scale(0.3);
+    /* Safari 和 Chrome */
+    -o-transform: scale(0.3);
+    /* Opera */
+  }
+
+  to {
+    transform: scale(1);
+    -ms-transform: scale(1);
+    /* IE 9 */
+    -moz-transform: scale(1);
+    /* Firefox */
+    -webkit-transform: scale(1);
+    /* Safari 和 Chrome */
+    -o-transform: scale(1);
+    /* Opera */
+  }
+}
+
+@-moz-keyframes slideInEnlarge
+/* Firefox */
+
+  {
+  from {
+    transform: scale(0.3);
+    -ms-transform: scale(0.3);
+    /* IE 9 */
+    -moz-transform: scale(0.3);
+    /* Firefox */
+    -webkit-transform: scale(0.3);
+    /* Safari 和 Chrome */
+    -o-transform: scale(0.3);
+    /* Opera */
+  }
+
+  to {
+    transform: scale(1);
+    -ms-transform: scale(1);
+    /* IE 9 */
+    -moz-transform: scale(1);
+    /* Firefox */
+    -webkit-transform: scale(1);
+    /* Safari 和 Chrome */
+    -o-transform: scale(1);
+    /* Opera */
+  }
+}
+
+@-webkit-keyframes slideInEnlarge
+/* Safari 和 Chrome */
+
+  {
+  from {
+    transform: scale(0.3);
+    -ms-transform: scale(0.3);
+    /* IE 9 */
+    -moz-transform: scale(0.3);
+    /* Firefox */
+    -webkit-transform: scale(0.3);
+    /* Safari 和 Chrome */
+    -o-transform: scale(0.3);
+    /* Opera */
+  }
+
+  to {
+    transform: scale(1);
+    -ms-transform: scale(1);
+    /* IE 9 */
+    -moz-transform: scale(1);
+    /* Firefox */
+    -webkit-transform: scale(1);
+    /* Safari 和 Chrome */
+    -o-transform: scale(1);
+    /* Opera */
+  }
+}
+
+@-o-keyframes slideInEnlarge
+/* Opera */
+
+  {
+  from {
+    transform: scale(0.3);
+    -ms-transform: scale(0.3);
+    /* IE 9 */
+    -moz-transform: scale(0.3);
+    /* Firefox */
+    -webkit-transform: scale(0.3);
+    /* Safari 和 Chrome */
+    -o-transform: scale(0.3);
+    /* Opera */
+  }
+
+  to {
+    transform: scale(1);
+    -ms-transform: scale(1);
+    /* IE 9 */
+    -moz-transform: scale(1);
+    /* Firefox */
+    -webkit-transform: scale(1);
+    /* Safari 和 Chrome */
+    -o-transform: scale(1);
+    /* Opera */
+  }
+}
+
+.cd-popup-container {
+  transform: translateX(0);
+  -ms-transform: translateX(0);
+  /* IE 9 */
+  -moz-transform: translateX(0);
+  /* Firefox */
+  -webkit-transform: translateX(0);
+  /* Safari 和 Chrome */
+  -o-transform: translateX(0);
+  /* Opera */
+  animation: slideInLeft 0.2s both ease-in;
+  -moz-animation: slideInLeft 0.2s both ease-in;
+  /* Firefox */
+  -webkit-animation: slideInLeft 0.2s both ease-in;
+  /* Safari 和 Chrome */
+  -o-animation: slideInLeft 0.2s both ease-in;
+  /* Opera */
+}
+
+.cd-popup-containerr {
+  transform: scale(1);
+  -ms-transform: scale(1);
+  /* IE 9 */
+  -moz-transform: scale(1);
+  /* Firefox */
+  -webkit-transform: scale(1);
+  /* Safari 和 Chrome */
+  -o-transform: scale(1);
+  /* Opera */
+  animation: slideInEnlarge 0.2s both ease-in;
+  -moz-animation: slideInEnlarge 0.2s both ease-in;
+  /* Firefox */
+  -webkit-animation: slideInEnlarge 0.2s both ease-in;
+  /* Safari 和 Chrome */
+  -o-animation: slideInEnlarge 0.2s both ease-in;
+  /* Opera */
+}

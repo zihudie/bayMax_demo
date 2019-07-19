@@ -1,0 +1,66 @@
+/*
+ * @Author: yaofang.wu 
+ * @Date: 2018-10-26 14:14:43 
+ * @Last Modified by: yaofang.wu
+ * @Last Modified time: 2018-10-31 17:10:21
+ */
+@charset "utf-8";
+$one: 1rem;
+$one_1: .1rem;
+@for $i from 0 through 5 {
+  @for $j from 1 through 9 {
+    @if $i==0 {
+      .ml_#{$j} {
+        margin-left: $j *  $one_1
+      }
+      
+      .mr_#{$j} {
+        margin-right: $j *  $one_1
+      }
+
+      .mt_#{$j} {
+        margin-top: $j *  $one_1
+      }
+
+      .mb_#{$j} {
+        margin-bottom: $j * $one_1
+      }
+
+    }
+
+    @else {
+      .ml#{$i}_#{$j} {
+        margin-left: ($i * 10 + $j) * $one_1
+      }
+
+      .mr#{$i}_#{$j} {
+        margin-right: ($i * 10 + $j) * $one_1
+      }
+
+      .mt#{$i}_#{$j} {
+        margin-top: ($i * 10 + $j) * $one_1
+      }
+
+      .mb#{$i}_#{$j} {
+        margin-bottom: ($i * 10 + $j) * $one_1
+      }
+
+    }
+
+  }
+}
+
+@for $i from 1 to 8 {
+  .mt#{$i}{
+      margin-top: $one *  $i;
+  } 
+  .mb#{$i}{
+      margin-bottom: $one *  $i;
+  } 
+  .ml#{$i}{
+      margin-left: $one *  $i;
+  }
+  .mr#{$i}{
+      margin-right: $one *  $i;
+  }
+}

@@ -1,0 +1,519 @@
+/*
+ * @Author: yaofang.wu
+ * @Date: 2018-09-25 19:36:40
+ * @Last Modified by: yaofang.wu
+ * @Last Modified time: 2019-07-19 17:10:26
+ */
+@charset "utf-8";
+
+body,
+button,
+input,
+select,
+textarea,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Microsoft YaHei", "微软雅黑", SimHei, "Arial", "宋体", "Times New Roman", Times, serif;
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+
+html,
+body {
+  width: 100%;
+  max-width: 750px;
+  margin: 0 auto;
+  height: 100%;
+  font-size: 1.2rem;
+  text-align: left;
+  color: #999;
+  background: #F9F9F9;
+}
+
+
+.h100 {
+  height: 100%;
+}
+
+/**
+ * [padding 取消特定标签的间距，列表样式]
+ * @type {Number}
+ */
+
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  -webkit-tap-highlight-color: transparent;
+  -moz-outline: none;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -webkit-appearance: none;
+  /* Safari */
+}
+
+select,
+select:focus,
+input[type='text'],
+input[type='tel'],
+input[type='date'],
+input[type='password'] {
+  border: none;
+}
+
+input:required:invalid,
+input:focus:invalid,
+textarea:required:invalid,
+textarea:focus:invalid {
+  box-shadow: none;
+}
+
+input,
+button,
+select,
+textarea {
+  outline: none;
+  border: none;
+}
+
+button {
+  background: transparent;
+}
+
+input:-webkit-autofill {
+  box-shadow: 0 0 0px 1000px white inset !important;
+}
+
+select {
+  -webkit-appearance: none;
+  appearance: none;
+  background: none;
+}
+
+textarea {
+  resize: none;
+}
+
+b {
+  font-weight: normal;
+}
+
+/**
+ * [clearfix 清浮动]
+ * @type {[type]}
+ */
+
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.clearfix {
+  zoom: 1;
+}
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+.ime {
+  ime-mode: disabled;
+}
+
+/**
+ * [display 影藏，显示]
+ * @type {[type]}
+ */
+
+.hide {
+  display: none !important;
+}
+
+.block {
+  display: block !important;
+}
+
+.none {
+  display: none;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.hidden,
+.invisible {
+  visibility: hidden;
+}
+
+.visible {
+  visibility: visible;
+}
+
+/**
+ * 取消a 点击时的边框
+ */
+
+a {
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  text-decoration: none;
+}
+
+/**
+ * 超出省略
+ */
+
+.ws {
+  overflow: hidden;
+  word-wrap: normal;
+  word-break: normal;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/**
+ * 定位
+ */
+
+.pr {
+  position: relative;
+}
+
+.pa {
+  position: absolute;
+}
+
+.fixed {
+  position: fixed;
+}
+
+/**
+ * [input 取消input点击的时候的默认外框]
+ * @type {[type]}
+ */
+
+input:focus,
+button,
+button:focus {
+  outline: none;
+  -moz-outline: none;
+  -webkit-tap-highlight-color: transparent;
+  /*  border: none; */
+  /*   box-shadow: none; */
+}
+
+/**
+ * flex布局
+ */
+
+.flex,
+.swiper-wrapper {
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;
+  /* OLD - Firefox 19- H5不用考虑 */
+  display: -mz-flexbox;
+  /* TWEENER IE 10 */
+  display: flex;
+  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+
+/**
+ * 居中  靠右  靠左
+ */
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+/**
+ * vertical-align
+ */
+.vt {
+  vertical-align: top;
+}
+
+.vm,
+img {
+  vertical-align: middle;
+}
+
+img {
+  max-width: 100%;
+}
+
+.vb {
+  vertical-align: bottom;
+}
+
+input::-webkit-input-placeholder {
+  color: #ccc;
+}
+
+input::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: #ccc;
+}
+
+input:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: #ccc;
+}
+
+input:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #ccc;
+}
+
+/****************list*************/
+
+/**
+ * flex布局
+ */
+
+.flex {
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;
+  /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;
+  /* TWEENER - IE 10 */
+  display: -webkit-flex;
+  /* NEW - Chrome */
+  display: flex;
+  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+  /* display: box; */
+  /* OLD - Android 4.4- */
+
+}
+
+
+
+.flex_one {
+  flex: 1;
+  -webkit-box-flex: 1;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  -moz-box-flex: 1;
+  /* OLD - Firefox 19- */
+  -webkit-flex: 1;
+  /* Chrome */
+  -ms-flex: 1;
+  /* IE 10 */
+}
+
+/*标签tag*/
+.box-model {
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0px 2px 4px 1px rgba(228, 227, 227, 0.5);
+}
+
+.flex_column {
+  -webkit-box-orient: vertical;
+  -webkit-flex-direction: column;
+  box-orient: vertical;
+  flex-direction: column;
+}
+
+.flex-row {
+  -webkit-box-orient: horizontal;
+  -webkit-flex-direction: row;
+  box-orient: horizontal;
+  flex-direction: row;
+}
+
+.flex-item-center {
+  /* 09版 */
+  -webkit-box-align: center;
+  /* 12版 */
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  -o-align-items: center;
+  align-items: center;
+}
+
+.flex-justify-center {
+  -webkit-box-pack: center;
+  /*主轴对齐方式 旧写法*/
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+.flex-item-end {
+  -webkit-box-align: end;
+  -webkit-align-items: flex-end;
+  align-items: flex-end;
+}
+
+.flex-justify-end {
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
+}
+
+.flex-item-start {
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+  align-items: flex-start;
+}
+
+.flex-justify-start {
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+}
+
+.flex-between {
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+}
+
+.fbold {
+  font-weight: bold;
+}
+
+.oh {
+  overflow: hidden;
+}
+
+.auto {
+  overflow: auto;
+}
+
+.max750 {
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+b,
+th {
+  font-weight: normal;
+}
+
+.table {
+  display: table;
+}
+
+.tableCell {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+/* 居中 */
+.ts-center {
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+}
+
+/* 动画 */
+/* 1. 从下到上滑出 */
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@keyframes slideInUp {
+  0% {
+    -webkit-transform: translateY(100%);
+    transform: translateY(100%);
+    visibility: visible;
+  }
+
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+.slideInUp {
+  -webkit-animation-name: slideInUp;
+  animation-name: slideInUp;
+}
+
+
+/* 向上动画 */
+.filter-up-enter-active {
+  transition: all .4s ease;
+}
+
+.filter-up-leave-active {
+  transition: all .4s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+
+.filter-up-enter {
+  transform: translateY(100%);
+  opacity: 0;
+}
+
+.filter-up-leave-to {
+  transform: translateY(100%);
+  opacity: 0;
+}
+
+
+
+.flex-layout {
+  color: #808d83;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.flex-con {
+  width: 100%;
+  overflow: auto;
+  flex: 1;
+  -webkit-box-flex: 1;
+  flex-grow: 1;
+  /* height: calc(100% - 6rem);
+   height: -webkit-calc(100% - 6rem); */
+}
+
+.flex-bottom {
+  height: 5rem;
+  width: 100%;
+  background-color: #e8e7e7;
+}

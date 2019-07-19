@@ -1,0 +1,107 @@
+{% extends "layout.html" %}
+{% block title %}{{title}}{% endblock %}
+
+{% block content %}
+<div class="content">
+    mvvm 原理解析
+    <div id="app">
+        <h2>{{{vmtitle}}}</h2>
+        <input v-model="name">
+        <h1>{{{name}}}</h1>
+        <button v-on:click="clickMe">click me!</button>
+    </div>
+</div>
+<script>
+    // general  know about  object.defineProperty
+    var Book = {}
+
+    varname = '';
+    var obj = {}
+    var descriptor = Object.create(null)
+    descriptor.value = 'static'
+    Object.defineProperty(obj, 'key', descriptor)
+    console.log("obj", obj)
+
+    Object.defineProperty(Book, 'new', {
+        value: 37,
+        writable: false,
+        enumerable: true,
+        configurable: true
+    })
+
+    Object.defineProperty(Book, 'name', {
+
+        set: function (value) {
+
+            name = value;
+
+            console.log('你取了一个书名叫做' + value);
+
+        },
+
+        get: function () {
+
+            return '《' + name + '》'
+
+        }
+    })
+
+    console.log(Book)
+    Book.name = 'vue权威指南'; // 你取了一个书名叫做vue权威指南
+    console.log(Book.name); // 《vue权威指南》
+    Book.new = 'ddd'
+    console.log(Book.new)
+
+    function Archiver() {
+        var temperature = null
+        var archive = []
+        Object.defineProperty(this, "temperature", {
+            get: function () {
+                console.log("get!")
+                return temperature
+            },
+            set: function (value) {
+                temperature = value
+                archive.push({
+                    val: temperature
+                })
+            }
+        })
+
+        this.archive = function () {
+            return archive
+        }
+    }
+
+    var arc = new Archiver()
+    arc.temperature = 1
+    arc.temperature = 2
+    arc.temperature = 3
+
+    console.log(arc.archive())
+</script>
+<script src="/public/js/mvvm/observer.js"></script>
+<script src="/public/js/mvvm/watcher.js"></script>
+<script src="/public/js/mvvm/compile.js"></script>
+<script src="/public/js/mvvm/index.js"></script>
+<script type="text/javascript">
+    new Vue({
+        el: '#app',
+        data: {
+            vmtitle: 'vue code',
+            name: 'imooc',
+        },
+        methods: {
+            clickMe: function () {
+                this.vmtitle = 'vue code click';
+            },
+        },
+        mounted: function () {
+            window.setTimeout(() => {
+                this.vmtitle = 'timeout 1000';
+            }, 1000);
+        },
+    });
+</script>
+
+{% endblock %}
