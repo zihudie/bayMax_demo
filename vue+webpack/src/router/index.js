@@ -26,12 +26,17 @@ let router = new Router({
       path: '/server',
       name: 'helloServer',
       component: resolve => require(['@/views/firstServer'], resolve)
+    },
+    {
+      path: '/study',
+      name: 'study',
+      component: resolve => require(['@/views/study/index'], resolve)
     }
   ]
 })
 
 router.beforeEach((to, from, next) => {
-  console.log("totototot.......", to)
+  console.log('totototot.......', to)
   if (to.name === 'HelloWorld' && to.query.actId === '12345') {
     next({
       path: '/linkTest',

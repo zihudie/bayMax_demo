@@ -1,4 +1,5 @@
 'use strict'
+const _ = require('lodash');
 const utils = require('./utils')
 const webpack = require('webpack')
 const config = require('../config')
@@ -45,6 +46,14 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     }
   },
   plugins: [
+    new webpack.ProvidePlugin({
+      Vue: ['vue/dist/vue.esm.js', 'default'],
+      mapState: ['vuex', 'mapState'],
+      mapGetters: ['vuex', 'mapGetters'],
+      _: 'lodash',
+      api: ['api', 'default'],
+      consts: ['consts', 'default'],
+    }),
     new webpack.DefinePlugin({
       'process.env': require('../config/dev.env')
     }),
@@ -85,8 +94,8 @@ module.exports = new Promise((resolve, reject) => {
           messages: [`Your application is running here: http://${devWebpackConfig.devServer.host}:${port}`],
         },
         onErrors: config.dev.notifyOnErrors
-        ? utils.createNotifierCallback()
-        : undefined
+          ? utils.createNotifierCallback()
+          : undefined
       }))
 
       resolve(devWebpackConfig)

@@ -7,9 +7,9 @@ import '@/assets/css/index.scss'
 import {
   createStore
 } from './store'
-import apis from '@/api/index'
-
+import './mock'
 Vue.config.productionTip = false
+
 let store = createStore()
 /* eslint-disable no-new */
 new Vue({
@@ -21,10 +21,3 @@ new Vue({
   },
   template: '<App/>'
 })
-
-Vue.prototype.$post = function (...params) {
-  apis.post(...params)
-}
-Vue.prototype.$postAll = function (...params) {
-  apis.postAll(...params)
-}

@@ -20,12 +20,13 @@
 </template>
 <script>
 import myScroll from "../components/mescroll";
+import { gameList } from "@/service/api/activity";
 export default {
   data() {
     return {
       srcrollConfig: {
         // 默认请求地址
-        urlKey: "QUERY_ROLE",
+        urlKey: gameList,
         // list字段名
         listName: "",
         urlData: {},

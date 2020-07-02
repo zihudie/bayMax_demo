@@ -15,14 +15,16 @@
 // 引入mescroll.min.js和mescroll.min.css
 import MeScroll from "mescroll.js/mescroll.min.js";
 import "mescroll.js/mescroll.min.css";
+import getCommand from "@/mixins/get-command";
 export default {
+  name: "my-scroll",
   props: {
     config: {
       type: Object,
       default: () => {
         return {
           // 默认请求地址
-          urlKey: "ORDER_LIST",
+          urlKey: undefined,
           // list字段名
           listName: "",
           empty: {},
@@ -35,6 +37,7 @@ export default {
       default() {}
     }
   },
+  mixins: [getCommand],
   data() {
     return {
       down: {},
@@ -52,7 +55,6 @@ export default {
       mescrollUp: {
         isBounce: false,
         callback: this.upCallback, // 上拉回调,此处可简写; 相当于 callback: function (page, mescroll) { getListData(page); }
-
         page: {
           num: 0, // 当前页码,默认0,回调之前会加1,即callback(page)会从1开始
           size: 10 // 每页数据的数量
@@ -82,6 +84,14 @@ export default {
     };
   },
   mounted() {
+    console.log("urlkey", this.config);
+
+    this.bindGet(this.config["urlKey"], "", {
+      action: "getList",
+      afterSuccess: ([result, data]) => {
+        console.log("data", data);
+      }
+    });
     this.mescrollInit();
   },
   methods: {
@@ -97,37 +107,41 @@ export default {
     },
     // 上拉回调 page = {num:1, size:10}; num:当前页 ,默认从1开始; size:每页数据条数,默认10
     upCallback(page, mescroll) {
+      console.log("111");
+
       let sendData = Object.assign(
         {},
         {
-          num: page.num, //页码
-          size: page.size //每页长度
+          num: page.num, // 页码
+          size: page.size // 每页长度
         },
         this.config.urlData
       );
-      this.$post(
-        this.config["urlKey"],
-        { data: sendData },
-        data => {
-          let arr = [];
-          if (this.config.listName) {
-            arr = data.retObj[this.config.listName];
-          } else {
-            arr = data.retObj;
-          }
-          // 如果是第一页需手动制空列表
-          if (page.num === 1) this.dataList = [];
-          // 把请求到的数据添加到列表
-          this.dataList = this.dataList.concat(arr);
-          // 数据渲染成功后,隐藏下拉刷新的状态
-          this.$nextTick(() => {
-            mescroll.endSuccess(arr.length);
-          });
-        },
-        err => {
-          mescroll.endErr();
-        }
-      );
+
+      this.doGet({ action: "getList" });
+      // this.$post(
+      //   this.config["urlKey"],
+      //   { data: sendData },
+      //   data => {
+      //     let arr = [];
+      //     if (this.config.listName) {
+      //       arr = data.retObj[this.config.listName];
+      //     } else {
+      //       arr = data.retObj;
+      //     }
+      //     // 如果是第一页需手动制空列表
+      //     if (page.num === 1) this.dataList = [];
+      //     // 把请求到的数据添加到列表
+      //     this.dataList = this.dataList.concat(arr);
+      //     // 数据渲染成功后,隐藏下拉刷新的状态
+      //     this.$nextTick(() => {
+      //       mescroll.endSuccess(arr.length);
+      //     });
+      //   },
+      //   err => {
+      //     mescroll.endErr();
+      //   }
+      // );
     }
   }
 };
