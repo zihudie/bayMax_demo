@@ -14,7 +14,7 @@
     "express": "^4.17.1",
     "mescroll": "0.0.3",
     "mescroll.js": "^1.4.1",
-    "node-sass": "^4.12.0",
+    "node-sass": "^7.0.0",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1",
     "vuex": "^3.1.1"
